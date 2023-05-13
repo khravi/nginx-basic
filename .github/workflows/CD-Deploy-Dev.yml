@@ -11,7 +11,6 @@ jobs:
     uses: ./.github/workflows/docker-image.yml
   deploy-dev:
     runs-on: ubuntu-latest
-
     environment: dev
     needs: [build]
     steps:
