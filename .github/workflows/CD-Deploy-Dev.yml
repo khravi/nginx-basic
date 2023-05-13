@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       env_name: '${{ vars.ENV_NAME }}'
-    environment: '${{ env.env_name }}'
+    environment: $env_name
     needs: [build]
     steps:
       - name: download artifact
         run: echo "downloading artifact"
       - name: deploying 
-        run: echo "deploying to ${{ env.env_name }} env"
+        run: echo "deploying to $env_name env"
