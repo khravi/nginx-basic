@@ -11,7 +11,7 @@ jobs:
     uses: ./.github/workflows/docker-image.yml
   deploy-dev:
     runs-on: ubuntu-latest
-    environment: ${{ vars.ENV_NAME }}
+    environment: dev
     needs: [build]
     steps:
       - name: download artifact
