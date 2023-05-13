@@ -1,0 +1,17 @@
+name: deploy to dev env
+on:
+  push:
+    branches:
+      - 'develop'
+jobs:
+  build:
+    uses: ./.github/workflows/docker-image.yml
+  deploy-qa:
+    runs-on: ubuntu-latest
+    environment: dev
+    needs: [build]
+    steps:
+      - name: download artifact
+        run: echo "downloading artifact"
+      - name: deploying 
+        run: echo "deploying to dev env"
