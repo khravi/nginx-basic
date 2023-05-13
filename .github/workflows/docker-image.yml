@@ -24,15 +24,15 @@ jobs:
       - name: deploying 
         run: echo "deploying to dev env"
         
-  deploy-qa:
-    runs-on: ubuntu-latest
-    environment: qa
-    needs: [build, deploy-dev]
-    steps:
-      - name: download artifact
-        run: echo "downloading artifact"
-      - name: deploying 
-        run: echo "deploying to dev env"
+ # deploy-qa:
+  #  runs-on: ubuntu-latest
+   # environment: qa
+   # needs: [build, deploy-dev]
+   # steps:
+    #  - name: download artifact
+    #    run: echo "downloading artifact"
+    #  - name: deploying 
+    #    run: echo "deploying to dev env"
         
         
   
