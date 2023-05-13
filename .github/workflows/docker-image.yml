@@ -22,7 +22,7 @@ jobs:
       - name: download artifact
         run: echo "downloading artifact"
       - name: deploying 
-        run: deploying to dev env
+        run: echo "deploying to dev env"
         
   deploy-qa:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
       - name: download artifact
         run: echo "downloading artifact"
       - name: deploying 
-        run: deploying to dev env
+        run: echo "deploying to dev env"
     
     
   
