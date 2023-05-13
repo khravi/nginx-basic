@@ -12,7 +12,7 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
 
-    environment: $env_name
+    environment: dev
     needs: [build]
     steps:
       - name: download artifact
