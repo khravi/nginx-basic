@@ -1,4 +1,4 @@
-name: deploy to ${{vars.ENV_NAME}} env
+name: deploy 
 on:
   push:
     branches:
