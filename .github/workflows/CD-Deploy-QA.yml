@@ -1,0 +1,18 @@
+name: deploy to qa env
+on:
+  push:
+    branches:
+      - 'release/**'
+jobs:
+  build:
+    uses: ./.github/workflows/docker-image.yml
+  deploy-qa:
+    runs-on: ubuntu-latest
+    environment: qa
+    needs: [build]
+    steps:
+      - name: download artifact
+        run: echo "downloading artifact"
+      - name: deploying 
+        run: echo "deploying to dev env"
+        
