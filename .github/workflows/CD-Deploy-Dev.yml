@@ -4,16 +4,16 @@ on:
     branches:
       - 'develop'
 env:
-  env_name: ${{vars.ENV_NAME}}
+  env_name: ${{ vars.ENV_NAME }}
 jobs:
   build:
     uses: ./.github/workflows/docker-image.yml
   deploy-dev:
     runs-on: ubuntu-latest
-    environment: ${{env.ENV_NAME}}
+    environment: $env_name
     needs: [build]
     steps:
       - name: download artifact
         run: echo "downloading artifact"
       - name: deploying 
-        run: echo "deploying to ${{env.ENV_NAME}} env"
+        run: echo "deploying to $env_name env"
