@@ -9,7 +9,7 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
     env:
-      env_name: '${{ vars.ENV_NAME }}'
+      env_name: '${{ env.ENV_NAME }}'
     environment: $env_name
     needs: [build]
     steps:
