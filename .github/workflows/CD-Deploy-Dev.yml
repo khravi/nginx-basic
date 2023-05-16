@@ -5,8 +5,8 @@ on:
       - 'develop'
 env:
   env_name: ${{ vars.ENV_NAME }}
-  DOCKERHUB_USERNAME: ${{ secretes.DOCKERHUB_USERNAME }}
-  DOCKERHUB_TOKEN: ${{ secretes.DOCKERHUB_TOKEN }}
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+  DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
   
 jobs:
   build:
