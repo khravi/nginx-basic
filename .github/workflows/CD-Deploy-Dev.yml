@@ -1,8 +1,13 @@
-name: deploy to dev env
+name: deploy 
 on:
   push:
     branches:
       - 'develop'
+env:
+  env_name: ${{ vars.ENV_NAME }}
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+  DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+  
 jobs:
   build:
     uses: ./.github/workflows/docker-image.yml
@@ -14,4 +19,4 @@ jobs:
       - name: download artifact
         run: echo "downloading artifact"
       - name: deploying 
-        run: echo "deploying to dev env"
+        run: echo "deploying to $env_name env"
